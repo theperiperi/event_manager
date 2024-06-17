@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
+import {HomePage} from "../src/components/home/home-page";
 
-const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ data }) {
+export default function Home ({ data }){
   return (
     <div className={styles.container}>
       <Head>
@@ -29,18 +29,8 @@ export default function Home({ data }) {
           </Link>
         </nav>
       </header>
-
-      <main className={styles.main}>
-        {data.map((ev) => (
-          <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
-          <a href={`/events/${ev.id}`}>
-            <Image width={300} height={300} alt={ev.title} src={ev.image} />
-            <h2>{ev.title}</h2>
-            <p>{ev.description}</p>
-          </a>
-          </Link>
-        ))}
-      </main>
+      
+      <HomePage data={data}/>
 
       <footer className={styles.footer}>
         <p>&copy; 2024 Events App</p>
