@@ -109,6 +109,7 @@ footer
   font-family: 'Roboto', sans-serif
   background-color: rgb(240, 240, 240)
   padding: 20px
+  color: black
 
 .event-card
   display: inline-block
@@ -146,3 +147,78 @@ footer
       text-align: center
       text-transform: uppercase
       font-size: 40px
+
+.cat-event-container 
+  font-family: 'Roboto', sans-serif
+  background-color: rgb(240, 240, 240)
+  padding: 20px
+
+  h1 
+    font-size: 24px
+    font-weight: bold
+    margin-bottom: 20px
+    text-align: center
+    text-transform: uppercase
+    color: rgb(72, 112, 72) // Adjust color as needed
+  
+
+  .event-cards-container 
+    display: flex
+    flex-wrap: wrap
+    gap: 20px /* Adjust the gap between cards */
+    justify-content: center /* Center align cards horizontally */
+  
+
+  .event-card 
+    flex: 1 0 calc(50% - 20px) /* Two cards per row with 20px gap */
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    padding: 15px
+    border-radius: 5px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+    transition: background-color 0.3s, color 0.3s
+
+    &:hover 
+      background-color: rgb(191, 226, 191)
+
+      .event-details 
+        h2, p 
+          color: rgb(42, 45, 44)
+        
+      
+    
+
+    .event-image-container 
+      flex: 0 0 150px /* Adjust image container width */
+      margin-right: 20px
+
+      .event-image 
+        width: 100%
+        height: auto
+        border-radius: 5px
+      
+    
+
+    .event-details 
+      flex: 1
+      display: flex
+      flex-direction: column
+
+      h2 
+        font-size: 20px
+        margin-bottom: 10px
+        text-transform: uppercase
+        color: rgb(42, 45, 44) // Initial text color
+        transition: color 0.3s
+      
+
+      p 
+        font-size: 16px
+        line-height: 1.5
+        color: rgb(42, 45, 44) // Initial text color
+        transition: color 0.3s
+      
+    
+  
+
