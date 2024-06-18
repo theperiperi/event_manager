@@ -7,7 +7,7 @@ const EventsPage = ({ data }) => {
       <h1>Event Page</h1>
       <div>
         {data.map(ev => (
-          <Link key={ev.id} href={`/events/${ev.id}`} passHref>
+          <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
           <a href={`/events/${ev.id}`}>
             <Image src={ev.image} alt={ev.title} width={300} height={300} />
             <h2>{ev.title}</h2>
