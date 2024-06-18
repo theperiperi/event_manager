@@ -219,6 +219,53 @@ footer
         color: rgb(42, 45, 44) // Initial text color
         transition: color 0.3s
       
-    
-  
 
+// SingleEvent.module.sass
+
+.single-event-container
+  max-width: 800px
+  margin: auto
+  text-align: center
+  padding: 20px
+
+  .image-container
+    margin-bottom: 20px
+
+  h1
+    font-size: 28px
+    font-weight: bold
+    margin-bottom: 10px
+
+  p
+    font-size: 16px
+    line-height: 1.6
+    margin-bottom: 20px
+
+  form
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 20px
+
+    input[type='email']
+      height: 40px
+      min-width: 300px
+      border-radius: 5px
+      padding: 0 10px
+      font-size: 16px
+
+    button[type='submit']
+      margin-left: 10px
+      border-radius: 5px
+      height: 40px
+      min-width: 150px
+      border: 1px solid #5f5a5a
+      font-size: 16px
+      font-weight: 600
+      background-color: rgb(191, 226, 191)
+      cursor: pointer
+      transition: color 0.3s, background 0.3s
+
+      &:hover
+        background: #333
+        color: rgb(191, 226, 191)
