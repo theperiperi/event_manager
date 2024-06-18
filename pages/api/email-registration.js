@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 function buildPath(){
-    path.join(process.cwd,'data','data.json');
+    return path.join(process.cwd(),'data','data.json');
 }
 
 function extractData(filePath){
@@ -33,16 +33,16 @@ export default function handler(req, res) {
  
 
     if(method==="POST"){
-        const {emailValue,eventId}=req.body;
+        const {email,eventId}=req.body;
 
-        const newAllEvents=allEvent.map(ev =>{
+        const newAllEvents=allEvents.map(ev =>{
             if(ev.id===eventId){
-                if(ev.emails_registered.includes(emailValue)){
+                if(ev.emails_registered.includes(email)){
                     res.status(400).json({message:"Email already registered"});
                 }
                 return{
                     ...ev,
-                    emails_registered:[...ev.emails_registered,emailValue]
+                    emails_registered:[...ev.emails_registered,email]
                 
                 }
             }
@@ -51,7 +51,7 @@ export default function handler(req, res) {
 
         fs.writeFileSync(filePath,JSON.stringify({events_categories,allEvents:newAllEvents}));
 
-        console.log("Email Value",emailValue);
+        console.log("Email Value",email);
         console.log("Event ID",eventId);
         res.status(200).json({status:"email log success"});
     }
