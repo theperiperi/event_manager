@@ -30,10 +30,27 @@ export default function handler(req, res) {
     if(!allEvents){
         res.status(404).json({message:"No events found"});
     }
-
+ 
 
     if(method==="POST"){
         const {emailValue,eventId}=req.body;
+
+        const newAllEvents=allEvent.map(ev =>{
+            if(ev.id===eventId){
+                if(ev.emails_registered.includes(emailValue)){
+                    res.status(400).json({message:"Email already registered"});
+                }
+                return{
+                    ...ev,
+                    emails_registered:[...ev.emails_registered,emailValue]
+                
+                }
+            }
+            return ev;
+        });
+
+        fs.writeFileSync(filePath,JSON.stringify({events_categories,allEvents:newAllEvents}));
+
         console.log("Email Value",emailValue);
         console.log("Event ID",eventId);
         res.status(200).json({status:"email log success"});
