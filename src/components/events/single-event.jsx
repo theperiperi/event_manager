@@ -8,6 +8,7 @@ const SingleEvent = ({ data }) => {
       <p>{data.description}</p>
 
       <form>
+        <label htmlFor="email">Register for this event</label>
         <input type="email" placeholder="Enter your email" />
         <button type="submit">Submit</button>
       </form>
