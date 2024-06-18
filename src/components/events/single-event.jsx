@@ -8,7 +8,7 @@ const SingleEvent = ({ data }) => {
 
   const onSubmit =async(e)=>{
     e.preventDefault();
-    const emailValue=inputEmail.current.value;
+    const email=inputEmail.current.value;
     const eventId=router?.query.id;
 
     try{
@@ -19,7 +19,7 @@ const SingleEvent = ({ data }) => {
         headers:{
           'Content-Type':'application/json'
         },
-        body:JSON.stringify({emailValue,eventId})
+        body:JSON.stringify({email,eventId})
       });
       if(!response.ok){
         throw new Error('Oopsies!Something went wrong `${response.status}`');
