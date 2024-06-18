@@ -1,26 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { EventsPge } from '../../src/components/events/events-page';
 
 const EventsPage = ({ data }) => {
-  return (
-    <div>
-      <h1>Event Page</h1>
-      <div>
-        {data.map(ev => (
-          <Link legacyBehavior key={ev.id} href={`/events/${ev.id}`} passHref>
-          <a href={`/events/${ev.id}`}>
-            <Image src={ev.image} alt={ev.title} width={300} height={300} />
-            <h2>{ev.title}</h2>
-            <p>{ev.description}</p>
-          </a>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+  return <EventsPge data={data} /> ;
 };
-
-
 
 export default EventsPage;
 
