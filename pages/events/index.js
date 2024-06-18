@@ -1,7 +1,7 @@
-import { EventsPge } from '../../src/components/events/events-page';
+import { AllEvents } from '../../src/components/events/events-page';
 
 const EventsPage = ({ data }) => {
-  return <EventsPge data={data} /> ;
+  return <AllEvents data={data} /> ;
 };
 
 export default EventsPage;

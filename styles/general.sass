@@ -104,3 +104,45 @@ footer
         &:hover
             color: black
 
+
+.all-events-container
+  font-family: 'Roboto', sans-serif
+  background-color: rgb(240, 240, 240)
+  padding: 20px
+
+.event-card
+  display: inline-block
+  position: relative
+  margin: 10px
+  border-radius: 5px
+  overflow: hidden
+
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3)
+
+  a
+    display: block
+    position: relative
+    color: white
+    text-decoration: none
+
+    &:hover
+      color: rgb(191, 226, 191)
+
+    .event-image
+      display: block
+      width: 300px
+      height: 300px
+      transition: transform 0.3s ease-in-out
+
+    .event-text
+      font-family: 'arial', sans-serif
+      font-weight:600
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      text-align: center
+      text-transform: uppercase
+      font-size: 40px
